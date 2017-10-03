@@ -1,21 +1,10 @@
-import React, {PropTypes} from 'react';
+// components/NotFound.js
+import React from 'react';
 
-const NotFound = ({location}) => {
-    return (
-        <div className="jumbotron">
-            <h1 className="display-1">Page Not Found</h1>
-            <p className="lead">404 Error</p>
-            <p>No match for the link <code>{location.pathname}</code></p>
-        </div>
-    );
-};
-
-
-
-NotFound.propTypes = {
-    location: PropTypes.object.isRequired
-};
-
-
+const NotFound = () =>
+  <div>
+    <h3>404 page not found</h3>
+    <p>We are sorry but the page you are looking for does not exist.</p>
+  </div>
 
 export default NotFound;

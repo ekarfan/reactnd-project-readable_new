@@ -8,3 +8,5 @@ export function getAllCategories() {
       .then(categories => dispatch({ type: types.LOAD_ALL_CATEGORY, categories }));
   };
 }
+
+

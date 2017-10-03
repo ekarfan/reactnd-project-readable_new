@@ -12,6 +12,7 @@ import {
   postsSelector
 } from "../../selectors/selector";
 
+import NotFound from '../NotFound';
 
 
 class CategoryPageContainer extends Component {
@@ -44,7 +45,7 @@ class CategoryPageContainer extends Component {
 
   render() {
     const path = this.getCategory();
-
+    if (path) {
     return (
       this.props.posts ?
         <CategoryPage
@@ -55,7 +56,8 @@ class CategoryPageContainer extends Component {
           handleModalVisibility={this.props.handleModalVisibility}
         />
         : null
-    );
+    );}
+    else return (<NotFound/>); 
   }
 }
 

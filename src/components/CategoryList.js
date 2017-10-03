@@ -6,21 +6,26 @@ import { bindActionCreators } from "redux";
 
 import { Container, Menu, Icon, Header } from 'semantic-ui-react'
 import ReduxToastr from 'react-redux-toastr'
+import NotFound from './NotFound';
 
 class CategoryList extends Component {
   componentDidMount() {
     this.props.getAllCategories();
   }
-
+  
   renderCategoryIcon(category) {
     return (
       <Menu.Item as={NavLink} to={`/${category.path}`} name={category.path} key={category.path}>
-        {category.name}
+      {category.name}
       </Menu.Item>
     )
   }
 
   render() {
+
+    if (this.props.categories.path === undefined || this.props.categories.path === "" ) return (<NotFound/>); 
+
+    else {
     return (
       <div className="App">
         <Header as={Menu} animation='uncover'  visible icon='labeled'  inverted className="App-Header">
@@ -52,7 +57,7 @@ class CategoryList extends Component {
             progressBar 
         />
       </div>
-    )
+    ) }
   }
 }
 

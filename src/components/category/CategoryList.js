@@ -6,6 +6,7 @@ import PostsPreviewContainer from "../post/PostsPreviewPage";
 import { SORT_BY_OPTIONS } from "../../actions/PostAction";
 
 const CategoryPage = (props) => {
+ 
   return (
     <div>
       <Segment.Group>
