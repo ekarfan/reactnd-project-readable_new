@@ -16,10 +16,7 @@ const headers = {
 export const getCategories = () =>
   fetch(`${api}/categories/`, { headers })
     .then(response => response.json())
-    .then(data => data.categories)
-    .catch(error => {
-        return error;
-    });
+    .then(data => data.categories);
 
 /* POSTS */
 export const getPost = (postId) =>
@@ -30,8 +27,7 @@ export const getPostsFromCategory = (categoryPath) => {
   if (categoryPath) {
     return fetch(`${api}/${categoryPath}/posts`, { headers })
       .then(response => response.json());
-  } 
-  else {
+  } else {
     return fetch(`${api}/posts`, { headers })
       .then(response => response.json());
   }
