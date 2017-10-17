@@ -3,7 +3,6 @@ import merge from 'lodash/merge';
 
 import * as types from '../actions/ActionType';
 
-
 const INITIAL_STATE = {
   byId: {},
   sortBy: { key: 'voteScore', order: 'desc' },
@@ -11,6 +10,8 @@ const INITIAL_STATE = {
   isModalOpen: false,
   editingPostId: null
 };
+
+
 
 export default function postsReducer(state = INITIAL_STATE, action) {
   let updatedInfo;

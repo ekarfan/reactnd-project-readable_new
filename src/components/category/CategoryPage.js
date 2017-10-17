@@ -12,7 +12,6 @@ import {
   postsSelector
 } from "../../selectors/selector";
 
-import NotFound from '../NotFound';
 
 
 class CategoryPageContainer extends Component {

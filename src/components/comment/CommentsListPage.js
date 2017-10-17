@@ -8,10 +8,8 @@ import {
   deleteComment, voteComment, handleCommentForm, changeModalVisibility, startEditingComment
 } from "../../actions/CommentAction"
 
-import {
-  commentsSelector, editingCommentSelector
-} from "../../reducers/commentsReducer"
 
+import { commentsSelector, editingCommentSelector } from "../../selectors/selector";
 
 
 import CommentsList from "./CommentsList";

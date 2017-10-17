@@ -2,6 +2,7 @@ import * as types from './ActionType';
 import * as API from "../utils/api";
 import { toastr } from 'react-redux-toastr'
 import uuid from 'uuid/v4';
+import orderBy from 'lodash/orderBy';
 
 export const SORT_BY_OPTIONS = [
   { key: 'timestamp/desc', text: 'Created at (desc)', value: 'timestamp/desc' },
@@ -89,3 +90,13 @@ export function changeModalVisibility(visibility) {
     dispatch({ type: types.MODAL_VISIBILITY_COMMENTS, visibility });
   };
 }
+
+export const commentsSelector = state => {
+  const notDeleted = Object.values(state.byId).filter((comment) => !comment.deleted);
+  return orderBy(notDeleted, state.sortBy.key, state.sortBy.order);
+}
+
+export const editingCommentSelector = state => {
+  return state.byId[state.editingCommentId]
+}
+

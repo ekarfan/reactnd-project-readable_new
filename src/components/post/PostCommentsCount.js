@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 import { Label, Icon } from "semantic-ui-react";
 
 const PostCommentsCount = (props) => {
-  //let countValue;
+  let countValue;
 
-  const countValue = !props.count ? <Icon name="spinner" loading /> : <span>{props.coun}</span>;
+  countValue = (props.count === undefined) ? <Icon name="spinner" loading /> : <span>{props.count}</span>
 
+ 
   return (
     <Label color="orange" as={Link} to={props.path} >
       <Icon name='comment'/> &nbsp; {countValue}

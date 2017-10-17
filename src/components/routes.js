@@ -14,8 +14,8 @@ class Routes extends Component {
         <CategoryList>
           <Switch>
             <Route exact path='/' component={CategoryPageContainer} />
-            <Route  path='/:category' component={CategoryPageContainer} />
-            <Route  path='/:category/:postId' component={PostPageContainer} />
+            <Route exact path='/:category' component={CategoryPageContainer} />
+            <Route exact path='/:category/:postId' component={PostPageContainer} />
             <Route path='*' component={NotFound} />
  
           </Switch>

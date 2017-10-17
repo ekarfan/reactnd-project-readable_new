@@ -1,5 +1,4 @@
 import omit from 'lodash/omit';
-import orderBy from 'lodash/orderBy';
 
 import * as types from '../actions/ActionType';
 
@@ -7,15 +6,6 @@ import * as types from '../actions/ActionType';
 /*
  * Selectors
  */
-
-export function commentsSelector(state) {
-  const notDeleted = Object.values(state.byId).filter((comment) => !comment.deleted);
-  return orderBy(notDeleted, state.sortBy.key, state.sortBy.order);
-}
-
-export function editingCommentSelector(state) {
-  return state.byId[state.editingCommentId]
-}
 
 
 

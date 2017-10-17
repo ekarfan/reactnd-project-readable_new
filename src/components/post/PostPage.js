@@ -11,7 +11,7 @@ import { push } from 'react-router-redux';
 
 import PostPage from "./PostList";
 
-class CategoryPageContainer extends Component {
+class PostPageContainer extends Component {
   componentDidMount() {
     this.props.retrievePost(this.props.match.params.postId);
   }
@@ -45,5 +45,5 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(CategoryPageContainer)
+  connect(mapStateToProps, mapDispatchToProps)(PostPageContainer)
 );
